@@ -359,10 +359,84 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 		desc: "Only allows Pok&eacute;mon native to the Cube region (OR/AS)",
 		onValidateSet(set, format) {
 			const cubeDex = [
-				"Camerupt-Mega",
-				"Centiskorch",
-				"Amomasnow-Mega",
-				"Sigilyph",
+						"Froslass",
+						"Archeops",
+						"Fezandipiti",
+						"Sigilyph",
+						"Marowak-Alola",
+						"Lanturn",
+						"Decidueye",
+						"Bewear",
+						"Camerupt",
+						"Duraludon",
+						"Ribombee",
+						"Qwilfish-Hisui",
+						"Audino",
+						"Claydol",
+						"Morpeko",
+						"Cradily",
+						"Veluza",
+						"Noivern",
+						"Pinsir",
+						"Lucario",
+						"Crabominable",
+						"Houndoom",
+						"Zygarde-10%",
+						"Weezing-Galar",
+						"Avalugg-Hisui",
+						"Golisopod",
+						"Arboliva",
+						"Togedemaru",
+						"Vullaby",
+						"Dachsbun",
+						"Rotom-Frost",
+						"Salazzle",
+						"Calyrex",
+						"Zoroark-Hisui",
+						"Stunfisk-Galar",
+						"Simipour",
+						"Illumise",
+						"Virizion",
+						"Druddigon",
+						"Dragalge",
+						"Gligar",
+						"Coalossal",
+						"Vikavolt",
+						"Empoleon",
+						"Articuno",
+						"Zangoose",
+						"Palossand",
+						"Slowbro-Galar",
+						"Pangoro",
+						"Klawf",
+						"Sableye",
+						"Centiskorch",
+						"Gallade",
+						"Tatsugiri",
+						"Golem-Alola",
+						"Mawile",
+						"Tsareena",
+						"Glaceon",
+						"Tyrantrum",
+						"Heliolisk",
+						"Delphox",
+						"Quagsire",
+						"Whimsicott",
+						"Magneton",
+						"Sneasel",
+						"Toxicroak",
+						"Vespiquen",
+						"Cofagrigus",
+						"Braviary",
+						"Garbodor",
+						"Lokix",
+						"Lunatone",
+						"Poliwrath",
+						"Entei",
+						"Dugtrio-Alola",
+						"Mimikyu",
+						"Drampa",
+						"Abomasnow",
 			];
 			const species = this.dex.species.get(set.species || set.name);
 			if (
@@ -370,6 +444,45 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 				!this.ruleTable.has("+" + species.id)
 			) {
 				return [species.baseSpecies + " is not in the Cube Pokédex."];
+			}
+			if (set.species === "Camerupt" && set.item !== "Cameruptite") {
+				return ["Camerupt must hold a Cameruptite."];
+			}
+			if (set.species === "Abomasnow" && set.item !== "Abomasite") {
+				return ["Abomasnow must hold an Abomasite."];
+			}
+			if (set.species === "Audino" && set.item !== "Audinite") {
+				return ["Audino must hold an Audinite."];
+			}
+			if (set.moves.includes('Defog') && !['Vullaby', 'Illumise', 'Whimsicott', 'Vespiquen'].includes(set.species)) {
+				return [`Only Vullaby, Illumise, Whimsicott, and Vespiquen can use Defog.`];
+			}
+			if (set.moves.includes('Rapid Spin') && !['Claydol', 'Morpeko', 'Coalossal', 'Tatsugiri'].includes(set.species)) {
+				return [`Only Claydol, Morpeko, Coalossal, and Tatsugiri can use Rapid Spin.`];
+			}
+			if (set.moves.includes('Sticky Web')) {
+				return ['Sticky Web is banned.']
+			}
+			if (set.moves.includes('Stealth Rock') && !['Cradily', 'Stunfisk-Galar', 'Mawile'].includes(set.species)) {
+				return [`Only Cradily, Stunfisk-Galar, and Mawile can use Stealth Rock.`];
+			}
+			if (set.moves.includes('Spikes') && !['Golisopod'].includes(set.species)) {
+				return [`Only Golisopod can use Spikes.`];
+			}
+			if (set.moves.includes('Toxic Spikes') && !['Cofagrigus', 'Garbodor'].includes(set.species)) {
+				return [`Only Cofagrigus and Garbodor can use Toxic Spikes.`];
+			}
+			if (set.moves.includes('Toxic') && !['Salazzle'].includes(set.species)) {
+				return [`Only Salazzle can use Toxic.`];
+			}
+			if (set.moves.includes('Scald') && !['Simipour'].includes(set.species)) {
+				return [`Only Simipour can use Scald.`];
+			}
+			if (set.item === 'Eviolite' && !['Vullaby', 'Gligar'].includes(set.species)) {
+				return [`Only Vullaby and Gligar can use Eviolite.`];
+			}
+			if (set.item === 'Heavy-Duty Boots' && !['Centiskorch'].includes(set.species)) {
+				return [`Only Centiskorch can use Heavy-Duty Boots.`];
 			}
 		},
 	},

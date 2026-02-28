@@ -12,7 +12,7 @@ export const Formats: FormatList = [
 		mod: "gen9",
 		bestOfDefault: true,
 		ruleset: [
-			"Standard NatDex",
+			"Hoenn Pokedex",
 			"Terastal Clause",
 			"Cube Pokedex",
 			// "-all pokemon, + Froslass, + Archeops, + Fezandipiti, + Sigilyph, + Marowak-Alola, + Lanturn, + Decidueye, + Bewear, + Camerupt-Mega, +Duraludon, +Ribombee, +Qwilfish-Hisui, +Audino-Mega, +Claydol, +Morpeko, +Cradily, +Veluza, +Noivern, +Pinsir, +Lucario, +Crabominable, +Houndoom, +Zygarde-10%, +Weezing-Galar, +Avalugg-Hisui, +Golisopod, +Arboliva, +Togedemaru, +Vullaby, +Dachsbun, +Rotom-Frost, +Salazzle, +Calyrex, +Zoroark-Hisui, +Stunfisk-Galar, +Simipour, +Illumise, +Virizion, +Druddigon, +Dragalge, +Gligar, +Coalossal, +Vikavolt, +Empoleon, +Articuno, +Zangoose",
@@ -175,36 +175,36 @@ export const Formats: FormatList = [
 // 				}
 // 				kyuremCount++;
 // 			}
-// 			if (set.moves.includes('defog') && !['Vullaby', 'Illumise', 'Whimsicott', 'Vespiquen'].includes(set.species)) {
-// 				return [`Only Vullaby, Illumise, Whimsicott, and Vespiquen can use Defog.`];
-// 			}
-// 			if (set.moves.includes('rapidspin') && !['Claydol', 'Morpeko', 'Coalossal', 'Tatsugiri'].includes(set.species)) {
-// 				return [`Only Claydol, Morpeko, Coalossal, and Tatsugiri can use Rapid Spin.`];
-// 			}
-// 			if (set.moves.includes('stickyweb')) {
-// 				return ['Sticky Web is banned.']
-// 			}
-// 			if (set.moves.includes('stealthrock') && !['Cradily', 'Stunfisk-Galar', 'Mawile'].includes(set.species)) {
-// 				return [`Only Cradily, Stunfisk-Galar, and Mawile can use Stealth Rock.`];
-// 			}
-// 			if (set.moves.includes('spikes') && !['Golisopod'].includes(set.species)) {
-// 				return [`Only Golisopod can use Spikes.`];
-// 			}
-// 			if (set.moves.includes('toxicspikes') && !['Cofagrigus', 'Garbodor'].includes(set.species)) {
-// 				return [`Only Cofagrigus and Garbodor can use Toxic Spikes.`];
-// 			}
-// 			if (set.moves.includes('toxic') && !['Salazzle'].includes(set.species)) {
-// 				return [`Only Salazzle can use Toxic.`];
-// 			}
-// 			if (set.moves.includes('scald') && !['Simipour'].includes(set.species)) {
-// 				return [`Only Simipour can use Scald.`];
-// 			}
-// 			if (set.item === 'Eviolite' && !['Vullaby', 'Gligar'].includes(set.species)) {
-// 				return [`Only Vullaby and Gligar can use Eviolite.`];
-// 			}
-// 			if (set.item === 'Heavy-Duty Boots' && !['Centiskorch'].includes(set.species)) {
-// 				return [`Only Centiskorch can use Heavy-Duty Boots.`];
-// 			}
+			// if (set.moves.includes('defog') && !['Vullaby', 'Illumise', 'Whimsicott', 'Vespiquen'].includes(set.species)) {
+			// 	return [`Only Vullaby, Illumise, Whimsicott, and Vespiquen can use Defog.`];
+			// }
+			// if (set.moves.includes('rapidspin') && !['Claydol', 'Morpeko', 'Coalossal', 'Tatsugiri'].includes(set.species)) {
+			// 	return [`Only Claydol, Morpeko, Coalossal, and Tatsugiri can use Rapid Spin.`];
+			// }
+			// if (set.moves.includes('stickyweb')) {
+			// 	return ['Sticky Web is banned.']
+			// }
+			// if (set.moves.includes('stealthrock') && !['Cradily', 'Stunfisk-Galar', 'Mawile'].includes(set.species)) {
+			// 	return [`Only Cradily, Stunfisk-Galar, and Mawile can use Stealth Rock.`];
+			// }
+			// if (set.moves.includes('spikes') && !['Golisopod'].includes(set.species)) {
+			// 	return [`Only Golisopod can use Spikes.`];
+			// }
+			// if (set.moves.includes('toxicspikes') && !['Cofagrigus', 'Garbodor'].includes(set.species)) {
+			// 	return [`Only Cofagrigus and Garbodor can use Toxic Spikes.`];
+			// }
+			// if (set.moves.includes('toxic') && !['Salazzle'].includes(set.species)) {
+			// 	return [`Only Salazzle can use Toxic.`];
+			// }
+			// if (set.moves.includes('scald') && !['Simipour'].includes(set.species)) {
+			// 	return [`Only Simipour can use Scald.`];
+			// }
+			// if (set.item === 'Eviolite' && !['Vullaby', 'Gligar'].includes(set.species)) {
+			// 	return [`Only Vullaby and Gligar can use Eviolite.`];
+			// }
+			// if (set.item === 'Heavy-Duty Boots' && !['Centiskorch'].includes(set.species)) {
+			// 	return [`Only Centiskorch can use Heavy-Duty Boots.`];
+			// }
 // 		}
 // 		return [];
 // 	},
