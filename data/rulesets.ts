@@ -363,6 +363,7 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 						"Archeops",
 						"Fezandipiti",
 						"Sigilyph",
+						"Marowak", //ban
 						"Marowak-Alola",
 						"Lanturn",
 						"Decidueye",
@@ -370,6 +371,7 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 						"Camerupt",
 						"Duraludon",
 						"Ribombee",
+						"Qwilfish", //ban
 						"Qwilfish-Hisui",
 						"Audino",
 						"Claydol",
@@ -381,18 +383,24 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 						"Lucario",
 						"Crabominable",
 						"Houndoom",
+						"Zygarde", //ban
 						"Zygarde-10%",
+						"Weezing", //ban
 						"Weezing-Galar",
+						"Avalugg", //ban
 						"Avalugg-Hisui",
 						"Golisopod",
 						"Arboliva",
 						"Togedemaru",
 						"Vullaby",
 						"Dachsbun",
+						"Rotom", //ban
 						"Rotom-Frost",
 						"Salazzle",
 						"Calyrex",
+						"Zoroark", //ban
 						"Zoroark-Hisui",
+						"Stunfisk", //ban
 						"Stunfisk-Galar",
 						"Simipour",
 						"Illumise",
@@ -406,6 +414,7 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 						"Articuno",
 						"Zangoose",
 						"Palossand",
+						"Slowbro", //ban
 						"Slowbro-Galar",
 						"Pangoro",
 						"Klawf",
@@ -413,6 +422,7 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 						"Centiskorch",
 						"Gallade",
 						"Tatsugiri",
+						"Golem", //ban
 						"Golem-Alola",
 						"Mawile",
 						"Tsareena",
@@ -433,6 +443,7 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 						"Lunatone",
 						"Poliwrath",
 						"Entei",
+						"Dugtrio", //ban
 						"Dugtrio-Alola",
 						"Mimikyu",
 						"Drampa",
@@ -443,7 +454,10 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 				!cubeDex.includes(species.baseSpecies) &&
 				!this.ruleTable.has("+" + species.id)
 			) {
-				return [species.baseSpecies + " is not in the Cube Pokédex."];
+				return [species.baseSpecies + " is not in the Cube."];
+			}
+			if (["Zygarde", "Weezing", "Avalugg", "Zoroark", "Marowak", "Stunfisk", "Rotom", "Slowbro", "Golem", "Dugtrio"].includes(set.species)) {
+				return [`${set.species} is not in the Cube.`];
 			}
 			if (set.species === "Camerupt" && set.item !== "Cameruptite") {
 				return ["Camerupt must hold a Cameruptite."];

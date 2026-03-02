@@ -4,15 +4,16 @@
 export const Formats: FormatList = [
 	// Cube Draft
 	{
-		section: "Cube Draft",
+		section: "One Trillion Lions Formats",
 		name: "temp",
 	},
 	{
-		name: "[Gen 9] National Dex OTL Cube",
+		name: "[Gen 9] [Cube] NatDex Draft",
 		mod: "gen9",
 		bestOfDefault: true,
 		ruleset: [
 			"Terastal Clause",
+			"Team Preview",
 			"Cube Pokedex",
 		],
 	},
