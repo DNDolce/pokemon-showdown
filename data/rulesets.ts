@@ -361,7 +361,6 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 			const cubeDex = [
 						"Froslass",
 						"Archeops",
-						"Fezandipiti",
 						"Sigilyph",
 						"Marowak", //ban
 						"Marowak-Alola",
@@ -383,10 +382,6 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 						"Lucario",
 						"Crabominable",
 						"Houndoom",
-						"Zygarde", //ban
-						"Zygarde-10%",
-						"Weezing", //ban
-						"Weezing-Galar",
 						"Avalugg", //ban
 						"Avalugg-Hisui",
 						"Golisopod",
@@ -396,10 +391,7 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 						"Dachsbun",
 						"Rotom", //ban
 						"Rotom-Frost",
-						"Salazzle",
 						"Calyrex",
-						"Zoroark", //ban
-						"Zoroark-Hisui",
 						"Stunfisk", //ban
 						"Stunfisk-Galar",
 						"Simipour",
@@ -410,7 +402,6 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 						"Gligar",
 						"Coalossal",
 						"Vikavolt",
-						"Empoleon",
 						"Articuno",
 						"Zangoose",
 						"Palossand",
@@ -442,12 +433,10 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 						"Lokix",
 						"Lunatone",
 						"Poliwrath",
-						"Entei",
 						"Dugtrio", //ban
 						"Dugtrio-Alola",
 						"Mimikyu",
 						"Drampa",
-						"Abomasnow",
 			];
 			const species = this.dex.species.get(set.species || set.name);
 			if (
@@ -487,7 +476,7 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 				return [`Only Cofagrigus and Garbodor can use Toxic Spikes.`];
 			}
 			if (set.moves.includes('Toxic') && !['Salazzle'].includes(set.species)) {
-				return [`Only Salazzle can use Toxic.`];
+				return [`No one (currently) can use Toxic.`];
 			}
 			if (set.moves.includes('Scald') && !['Simipour'].includes(set.species)) {
 				return [`Only Simipour can use Scald.`];
