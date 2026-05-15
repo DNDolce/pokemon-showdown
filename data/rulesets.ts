@@ -356,87 +356,101 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 	cubepokedex: {
 		effectType: "ValidatorRule",
 		name: "Cube Pokedex",
-		desc: "Only allows Pok&eacute;mon native to the Cube region (OR/AS)",
+		desc: "Only allows Pok&eacute;mon native to the Cube region",
 		onValidateSet(set, format) {
 			const cubeDex = [
-						"Froslass",
-						"Archeops",
-						"Sigilyph",
-						"Marowak", //ban
-						"Marowak-Alola",
-						"Lanturn",
-						"Decidueye",
-						"Bewear",
-						"Camerupt",
-						"Duraludon",
-						"Ribombee",
-						"Qwilfish", //ban
-						"Qwilfish-Hisui",
-						"Audino",
-						"Claydol",
-						"Morpeko",
-						"Cradily",
-						"Veluza",
-						"Noivern",
-						"Pinsir",
-						"Lucario",
-						"Crabominable",
-						"Houndoom",
-						"Avalugg", //ban
-						"Avalugg-Hisui",
-						"Golisopod",
+						"Altaria",
 						"Arboliva",
-						"Togedemaru",
-						"Vullaby",
-						"Dachsbun",
-						"Rotom", //ban
-						"Rotom-Frost",
-						"Calyrex",
-						"Stunfisk", //ban
-						"Stunfisk-Galar",
-						"Simipour",
-						"Illumise",
-						"Virizion",
-						"Druddigon",
-						"Dragalge",
-						"Gligar",
-						"Coalossal",
-						"Vikavolt",
+						"Archeops",
 						"Articuno",
-						"Zangoose",
-						"Palossand",
-						"Slowbro", //ban
-						"Slowbro-Galar",
-						"Pangoro",
-						"Klawf",
-						"Sableye",
+						"Avalugg",//ban
+						"Avalugg-Hisui",
+						"Bewear",
 						"Centiskorch",
-						"Gallade",
-						"Tatsugiri",
-						"Golem", //ban
-						"Golem-Alola",
-						"Mawile",
-						"Tsareena",
-						"Glaceon",
-						"Tyrantrum",
-						"Heliolisk",
-						"Delphox",
-						"Quagsire",
-						"Whimsicott",
-						"Magneton",
-						"Sneasel",
-						"Toxicroak",
-						"Vespiquen",
+						"Claydol",
+						"Coalossal",
 						"Cofagrigus",
-						"Braviary",
+						"Copperajah",
+						"Crabominable", 
+						"Cradily",
+						"Dachsbun",
+						"Decidueye",
+						"Dedenne",
+						"Delphox",
+						"Dragalge",
+						"Drampa",
+						"Drifblim",
+						"Druddigon",
+						"Dugtrio",//ban
+						"Dugtrio-Alola",
+						"Duraludon",
+						"Forretress", 
+						"Froslass",
+						"Gallade",
 						"Garbodor",
+						"Gardevoir",
+						"Glaceon",
+						"Gligar",
+						"Golem",//ban
+						"Golem-Alola",
+						"Golisopod",
+						"Guzzlord",
+						"Heliolisk", 
+						"Houndoom",
+						"Illumise",
+						"Klawf",
+						"Lanturn",
 						"Lokix",
 						"Lunatone",
-						"Poliwrath",
-						"Dugtrio", //ban
-						"Dugtrio-Alola",
-						"Mimikyu",
-						"Drampa",
+						"Magmortar",
+						"Magneton",
+						"Marowak",//ban
+						"Marowak-Alola",
+						"Mawile",
+						"Audino",
+						"Camerupt",
+						"Mimikyu", 
+						"Morpeko",
+						"Palossand",
+						"Pangoro",
+						"Pawmot",
+						"Piloswine",
+						"Pinsir",
+						"Primeape",
+						"Pyroar",
+						"Quagsire",
+						"Qwilfish",//ban
+						"Qwilfish-Hisui",
+						"Revavroom",
+						"Ribombee",
+						"Roselia",
+						"Rotom",//ban
+						"Rotom-Frost",
+						"Sableye",
+						"Salazzle",
+						"Sigilyph",
+						"Silvally",
+						"Slowbro",//ban
+						"Slowbro-Galar",
+						"Sneasel",
+						"Stunfisk",//ban
+						"Stunfisk-Galar",
+						"Sneasel",
+						"Tatsugiri",
+						"Tentacruel",
+						"Toedscruel",
+						"Toucannon",
+						"Toxicroak",
+						"Tropius", 
+						"Tsareena",
+						"Tyrantrum",
+						"Veluza",
+						"Vikavolt",
+						"Virizion",
+						"Wartortle",
+						"Whimsicott",
+						"Wugtrio",
+						"Zangoose",
 			];
 			const species = this.dex.species.get(set.species || set.name);
 			if (
@@ -445,44 +459,41 @@ export const Rulesets: import("../sim/dex-formats").FormatDataTable = {
 			) {
 				return [species.baseSpecies + " is not in the Cube."];
 			}
-			if (["Zygarde", "Weezing", "Avalugg", "Zoroark", "Marowak", "Stunfisk", "Rotom", "Slowbro", "Golem", "Dugtrio"].includes(set.species)) {
+			if (["Avalugg", "Dugtrio", "Golem", "Marowak", "Qwilfish", "Rotom", "Slowbro", "Stunfisk"].includes(set.species)) {
 				return [`${set.species} is not in the Cube.`];
 			}
 			if (set.species === "Camerupt" && set.item !== "Cameruptite") {
 				return ["Camerupt must hold a Cameruptite."];
 			}
-			if (set.species === "Abomasnow" && set.item !== "Abomasite") {
-				return ["Abomasnow must hold an Abomasite."];
-			}
 			if (set.species === "Audino" && set.item !== "Audinite") {
 				return ["Audino must hold an Audinite."];
 			}
-			if (set.moves.includes('Defog') && !['Vullaby', 'Illumise', 'Whimsicott', 'Vespiquen'].includes(set.species)) {
-				return [`Only Vullaby, Illumise, Whimsicott, and Vespiquen can use Defog.`];
+			if (set.moves.includes('Defog') && !['Altaria', 'Illumise', 'Whimsicott', 'Tropius'].includes(set.species)) {
+				return [`Only Altaria, Illumise, Whimsicott, and Tropius can use Defog.`];
 			}
-			if (set.moves.includes('Rapid Spin') && !['Claydol', 'Morpeko', 'Coalossal', 'Tatsugiri'].includes(set.species)) {
-				return [`Only Claydol, Morpeko, Coalossal, and Tatsugiri can use Rapid Spin.`];
+			if (set.moves.includes('Rapid Spin') && !['Claydol', 'Morpeko', 'Coalossal', 'Wartortle'].includes(set.species)) {
+				return [`Only Claydol, Morpeko, Coalossal, and Wartortle can use Rapid Spin.`];
 			}
 			if (set.moves.includes('Sticky Web')) {
 				return ['Sticky Web is banned.']
 			}
-			if (set.moves.includes('Stealth Rock') && !['Cradily', 'Stunfisk-Galar', 'Mawile'].includes(set.species)) {
-				return [`Only Cradily, Stunfisk-Galar, and Mawile can use Stealth Rock.`];
+			if (set.moves.includes('Stealth Rock') && !['Cradily', 'Stunfisk-Galar', 'Mawile', 'Piloswine'].includes(set.species)) {
+				return [`Only Cradily, Stunfisk-Galar, Mawile, and Piloswine can use Stealth Rock.`];
 			}
-			if (set.moves.includes('Spikes') && !['Golisopod'].includes(set.species)) {
-				return [`Only Golisopod can use Spikes.`];
+			if (set.moves.includes('Spikes') && !['Golisopod', 'Roselia','Garbodor'].includes(set.species)) {
+				return [`Only Golisopod, Roselia, and Garbodor can use Spikes.`];
 			}
-			if (set.moves.includes('Toxic Spikes') && !['Cofagrigus', 'Garbodor'].includes(set.species)) {
-				return [`Only Cofagrigus and Garbodor can use Toxic Spikes.`];
+			if (set.moves.includes('Toxic Spikes') && !['Cofagrigus', 'Garbodor', 'Roselia'].includes(set.species)) {
+				return [`Only Cofagrigus, Garbodor, and Roselia can use Toxic Spikes.`];
 			}
-			if (set.moves.includes('Toxic') && !['Salazzle'].includes(set.species)) {
-				return [`No one (currently) can use Toxic.`];
+			if (set.moves.includes('Toxic') && !['Guzzlord'].includes(set.species)) {
+				return [`Only Guzzlord can use Toxic.`];
 			}
-			if (set.moves.includes('Scald') && !['Simipour'].includes(set.species)) {
-				return [`Only Simipour can use Scald.`];
+			if (set.moves.includes('Scald') && !['Wartortle'].includes(set.species)) {
+				return [`Only Wartortle can use Scald.`];
 			}
-			if (set.item === 'Eviolite' && !['Vullaby', 'Gligar'].includes(set.species)) {
-				return [`Only Vullaby and Gligar can use Eviolite.`];
+			if (set.item === 'Eviolite' && !['Wartortle', 'Gligar','Roselia'].includes(set.species)) {
+				return [`Only Wartortle, Gligar, and Roselia can use Eviolite.`];
 			}
 			if (set.item === 'Heavy-Duty Boots' && !['Centiskorch'].includes(set.species)) {
 				return [`Only Centiskorch can use Heavy-Duty Boots.`];
